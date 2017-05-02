@@ -6,7 +6,8 @@
   "scripts": {
     "download": "node download.js --",
     "listen-hisuite": "node index.js -- --hosts",
-    "listen-erecovery": "node index.js -- --dns"
+    "listen-erecovery": "node index.js -- --dns",
+    "start": "node index.js -- --hosts"
   },
   "author": "",
   "license": "ISC",
