@@ -1,0 +1,22 @@
+{
+  "name": "fhdns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "download": "node download.js --",
+    "listen-hisuite": "node index.js -- --hosts",
+    "listen-erecovery": "node index.js -- --dns"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "dnsjack": "^1.0.0",
+    "express": "^4.15.2",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "node-fetch": "^1.6.3",
+    "xml2js": "^0.4.17"
+  }
+}
