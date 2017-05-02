@@ -9,6 +9,7 @@ paid option, I can not compete with their excellent support.
 ## Why should I use use REDLOTUS rather than FunkyHuawei?
 
 * It's free.
+* It's open source: Learn and participate, or simply review the existing stuff.
 * It's self hosted: Setting foreign DNS to your infrastructure allows them to Man-in-the-middle a lot more than just
   the update-traffic.
 

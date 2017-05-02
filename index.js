@@ -3,13 +3,12 @@ const app = express();
 const bodyParser = require('body-parser');
 const fetchFromUpstream = require('./src/helper/fetchFromUpstream');
 const authorizeRoute = require('./src/routes/authorize');
-const checkRoute = require('./src/routes/check');
+const pathToFirmware = './firmware/';
+const checkRoute = require('./src/routes/check')(pathToFirmware);
+
 const ensureHosts = require('./src/hosts/ensureHosts');
-const pathToFirmware = './firmware/VTR-L29C432B123';
+//require('./src/hosts/dnsproxy');
 
-require('./src/hosts/dnsproxy');
-
-//app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text({
     type: 'application/x-www-form-urlencoded'
 }));
