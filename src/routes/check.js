@@ -12,7 +12,9 @@ module.exports = function(directory) {
         }
 
         if (parsedBody.rules && parsedBody.rules.PackageType === 'full') {
-            return res.status(200).send(getUpdateResponse(directory));
+            const updateResponse = getUpdateResponse(directory);
+            console.log(updateResponse);
+            return res.status(200).send(updateResponse);
         }
 
         return res.status(500).send();
@@ -27,7 +29,7 @@ function getUpdateResponse(directory) {
         "components": [{
             "name": "REDLOTUS-OTA",
             "version": "REDLOTUS",
-            "versionID": null,
+            "versionID": version,
             "description": "Red Lotus Flash",
             "createTime": "2017-04-04T03:18:12+0000",
             "url": "http://query.hicloud.com/redlotus/firmware/"
