@@ -20,7 +20,7 @@ module.exports = function(directory) {
 };
 
 function getUpdateResponse(directory) {
-    const version = require(directory + 'version.js');
+    const version = require(directory + '/version.js');
     return {
         "status": "0",
         "autoPollingCycle": "1",

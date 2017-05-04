@@ -1,9 +1,10 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 const fetchFromUpstream = require('./src/helper/fetchFromUpstream');
 const authorizeRoute = require('./src/routes/authorize');
-const pathToFirmware = './firmware/';
+const pathToFirmware = path.resolve('.','firmware');
 const checkRoute = require('./src/routes/check')(pathToFirmware);
 
 const ensureHosts = require('./src/hosts/ensureHosts');
