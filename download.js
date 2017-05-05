@@ -24,12 +24,13 @@ if (folderUrl === argv._[0]) {
 
 const filelistUrl = folderUrl + 'filelist.xml';
 
-mkdirpromise(folderUrl)
-    .then(()=>fetch(filelistUrl))
+mkdirpromise(destination)
+    .then(() => console.log('Created destination folder...'))
+    .then(() => fetch(filelistUrl))
     .then(response => response.text())
     .then(parseFilesFromFilelist)
-    .then(() => createVersionFile(path.join(destination, 'version.js'), filelistUrl))
     .then(files => downloadAllFiles(files, destination))
+    .then(() => createVersionFile(path.join(destination, 'version.js'), filelistUrl))
     .catch(console.error);
 
 function downloadAllFiles(files, to) {
