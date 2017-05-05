@@ -10,7 +10,7 @@
     "start": "node index.js -- --hosts"
   },
   "author": "",
-  "license": "ISC",
+  "license": "LGPL-3.0",
   "dependencies": {
     "body-parser": "^1.17.1",
     "dnsjack": "^1.0.0",
