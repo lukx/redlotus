@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 const downloadWithProgress = require('./src/helper/downloadWithProgress');
 const createVersionFile = require('./src/filePackage/createVersionFile');
 const path = require('path');
+const mkdirp = require('mkdirp');
 const destination = path.join(__dirname, 'firmware');
 
 if (argv._.length !== 1 || argv._[0].indexOf('http://update.hicloud.com') !== 0) {
@@ -23,7 +24,8 @@ if (folderUrl === argv._[0]) {
 
 const filelistUrl = folderUrl + 'filelist.xml';
 
-fetch(filelistUrl)
+mkdirpromise(folderUrl)
+    .then(()=>fetch(filelistUrl))
     .then(response => response.text())
     .then(parseFilesFromFilelist)
     .then(() => createVersionFile(path.join(destination, 'version.js'), filelistUrl))
@@ -36,4 +38,16 @@ function downloadAllFiles(files, to) {
         prms = prms.then(() => downloadWithProgress(folderUrl + file.path, path.join(to, file.path)));
     });
     return prms;
+}
+
+
+function mkdirpromise(destination) {
+    return new Promise(function (resolve, reject) {
+        mkdirp(destination, function (err) {
+            if (err) {
+                return reject(err);
+            }
+            resolve();
+        });
+    });
 }
