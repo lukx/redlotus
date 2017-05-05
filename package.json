@@ -1,7 +1,7 @@
 {
-  "name": "fhdns",
+  "name": "redlotus",
   "version": "1.0.0",
-  "description": "",
+  "description": "REDLOTUS Firmware Update Tool for Huawei Phones",
   "main": "index.js",
   "scripts": {
     "download": "node download.js --",
@@ -9,7 +9,7 @@
     "listen-erecovery": "node index.js -- --dns",
     "start": "node index.js -- --hosts"
   },
-  "author": "",
+  "author": "Lukas Einfalt <lukx@lukx.de>",
   "license": "LGPL-3.0",
   "dependencies": {
     "body-parser": "^1.17.1",
