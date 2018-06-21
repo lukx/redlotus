@@ -36,7 +36,7 @@ mkdirpromise(destination)
 function downloadAllFiles(files, to) {
     let prms = Promise.resolve();
     files.forEach(function (file) {
-        prms = prms.then(() => downloadWithProgress(folderUrl + file.path, path.join(to, file.path)));
+        prms = prms.then(() => downloadWithProgress(folderUrl + file.path, path.join(to, file.path), file.md5));
     });
     return prms;
 }
