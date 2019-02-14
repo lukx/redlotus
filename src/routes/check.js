@@ -11,7 +11,7 @@ module.exports = function(directory) {
             return;
         }
 
-        if (parsedBody.rules && parsedBody.rules.PackageType === 'full') {
+        if (parsedBody.rules && parsedBody.rules.PackageType.substring(0, 4) === 'full') {
             const updateResponse = getUpdateResponse(directory);
             console.log(updateResponse);
             return res.status(200).send(updateResponse);
